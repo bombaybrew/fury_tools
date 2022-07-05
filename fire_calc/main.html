@@ -1,0 +1,178 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="author" content="BombayBrew">
+    <meta name="description" content="Fire Calc">
+    <meta property="og:title" content="Fire Calc">
+    <meta property="og:description" content="Fire Calc">
+
+    <title>Fire Calc</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        .container {
+            max-width: 48rem !important
+        }
+
+        .section {
+            padding: 1rem 1rem;
+        }
+
+        body {
+            font-family: Roboto;
+            background-color: #fefefe;
+        }
+    </style>
+</head>
+
+<body>
+    </hr>
+    <section class="section">
+        <div class="container">
+            <div class="content">
+
+                <h3>FIRE Calculator</h3>
+                <hr>
+
+                <form id="form_ret">
+
+                    <div class="field is-horizontal">
+                        <div class="field-label">
+                            <label class="label">Current age</label>
+                        </div>
+                        <div class="field-body">
+                            <div class="field">
+                                <div class="control">
+                                    <input id="currAge" class="input" type="number" min="0" max="60"
+                                        placeholder="Current age" value="35">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field is-horizontal">
+                        <div class="field-label">
+                            <label class="label">Retirement age</label>
+                        </div>
+                        <div class="field-body">
+                            <div class="field">
+                                <div class="control">
+                                    <input id="retAge" class="input" type="number" min="0" max="120"
+                                        placeholder="Retirement age" value="40">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field is-horizontal">
+                        <div class="field-label">
+                            <label class="label">Life expectancy</label>
+                        </div>
+                        <div class="field-body">
+                            <div class="field">
+                                <div class="control">
+                                    <input id="lifeExp" class="input" type="number" min="0" max="120"
+                                        placeholder="Life expectancy" value="90">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field is-horizontal">
+                        <div class="field-label">
+                            <label class="label">Inflation %</label>
+                        </div>
+                        <div class="field-body">
+                            <div class="field">
+                                <div class="control">
+                                    <input id="inflation" class="input" type="number" min="0" max="10" step="0.1"
+                                        placeholder="Inflation" value="6">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field is-horizontal">
+                        <div class="field-label">
+                            <label class="label">Return on investments %</label>
+                        </div>
+                        <div class="field-body">
+                            <div class="field">
+                                <div class="control">
+                                    <input id="roi" class="input" type="number" min="0" max="100" step="0.1"
+                                        placeholder="Return on Investments" value="9">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field is-horizontal">
+                        <div class="field-label">
+                            <label class="label">Yearly expense</label>
+                        </div>
+                        <div class="field-body">
+                            <div class="field">
+                                <div class="control">
+                                    <input id="yearlyExpense" class="input" type="number" placeholder="Yearly expense"
+                                        value="12">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field is-horizontal">
+                        <div class="field-label">
+                            <label class="label">Current Savings</label>
+                        </div>
+                        <div class="field-body">
+                            <div class="field">
+                                <div class="control">
+                                    <input id="initInv" class="input" type="number" placeholder="Initial investment"
+                                        value="230">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field is-horizontal">
+                        <div class="field-label">
+                            <label class="label">Additional savings before retirement / year</label>
+                        </div>
+                        <div class="field-body">
+                            <div class="field">
+                                <div class="control">
+                                    <input id="savingsBeforeRetirement" class="input" type="number" min="0" max="120"
+                                        placeholder="Savings before retirement / year" value="10">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="field is-grouped is-grouped-right">
+                        <div class="control">
+                            <button class="button is-link" onclick="return onSubmit(event)">Just tell me
+                                already!</button>
+                        </div>
+                        <div class="control">
+                            <button class="button is-link is-light" onclick="return resetForm()">Reset</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <br>
+            <canvas id="chart_ret"></canvas>
+
+            <section class="section">
+                <div id="tableContainer"></div>
+            </section>
+        </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4"></script>
+    <script src="js/tool_ret.js"></script>
+
+</body>
