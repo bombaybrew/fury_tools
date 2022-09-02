@@ -52,8 +52,8 @@ function calcRetirementNumbers() {
         corpusString = "(" + corpus.toFixed(1)
 
         if (processAge <= retAge) {
-            corpusString = corpusString + " + " + (corpus * roi / 100).toFixed(1) + " + " + savingsBeforeRetirement + ")"
-            corpus = corpus + (corpus * roi / 100) + savingsBeforeRetirement
+            corpusString = corpusString + " + " + (corpus * roi / 100).toFixed(1) + " + " + savingsBeforeRetirement + " - " + expense.toFixed(1) + ")"
+            corpus = corpus + (corpus * roi / 100) + savingsBeforeRetirement - expense
         } else {
             corpusString = corpusString + " + " + (corpus * roi / 100).toFixed(1) + " - " + expense.toFixed(1) + ")"
             corpus = corpus - expense + (corpus * roi / 100)
